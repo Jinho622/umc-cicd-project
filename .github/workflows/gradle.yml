@@ -35,3 +35,10 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew clean build
       shell: bash # (7).build 시작
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: build-artifacts
+        path:
+          build/libs/*.jar
